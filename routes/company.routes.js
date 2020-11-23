@@ -145,7 +145,4 @@ router.post('/private-company/edit', isLogged, checkRole(['BUSINESS-RECRUITER'])
 })
 
 
-
-
-
 module.exports = router
