@@ -1,25 +1,169 @@
-<section class="container index">
+<div class="glide">
+    <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+            <li class="glide__slide"><img src="/images/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg"></li>
+            <li class="glide__slide"><img src="/images/simon-abrams-k_T9Zj3SE8k-unsplash.jpg"></li>
+            <li class="glide__slide"><img src="/images/you-x-ventures-Oalh2MojUuk-unsplash.jpg"></li>
+        </ul>
+        <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+        </div>
+    </div>
+</div>
 
-    <div class="row justify-content-center">
 
-        <div class="col-md-8">
+<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/glide.min.js"></script>
 
-{{!-- DIBUJAR CUADRADO VER COMO HACERLO / PARALLAX /--}}
-            <div style="border: 1px solid green;"> 
-                <div class="text-white text-center py-5 px-4">
-                    <div>
-                        <h2 class="card-title h1-responsive pt-3 mb-5 font-bold">      <a href="/company/signup"><img src="../images/logo-ironhack-1 (1)123.png" alt="IronJob logo" class="logoimg"></a>
-</h2>
-                        <p class="mx-5 mb-5">Bienvenid@ a <strong>{{siteTitle}}</strong>, la mejor plataforma para
-                            encontrar jóvenes talentos.
-                        </p>
-                        <a href="/company/signup"><input type="submit" class="btn2" value="Regístrate"></a>
+<script>
+    new Glide('.glide', {
+        autoplay: 3000,
+    }).mount()
+    
+</script>
+
+{{!--  PARTNERS SECTION  --}}
+<div class="boom">
+<div class="section2">
+<div class="container">
+    <div class="partners">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-md-6 col-lg-3">
+                <img src="/images/CARS LOGO/aston-202943.png">
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <img src="/images/ibm-logo.png">
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <img src="/images/pied-piper-6-569415.png">
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <img src="/images/Branding_lenovo-logo_lenovologoposred_low_res.png">
+            </div>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{{!-- UTILITY SECTION --}}
+<div class="section3">
+<div class="container-fluid">
+    <div class="statement1">
+        <div class="row">
+            <div class="col-sm">
+                <img src="/images/portatil-statement.png">
+            </div>
+            <div class="col-lg">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>EL TALENTO ES TUYO </h2>
                     </div>
+                    <p>Amarte es un placer es el decimotercer álbum de estudio del cantante mexicano Luis Miguel. Fue
+                        lanzado por WEA Latina el
+                        13 de septiembre de 1999. Producido por el artista, es un álbum pop con influencias de R&B y
+                        jazz. Luis Miguel estuvo
+                        muy involucrado en la composición de las canciones en este disco que en trabajos anteriores y
+                        fue asistido por
+                        compositores como Arturo Pérez, Armando Manzanero y Juan Carlos Calderón. A diferencia de sus
+                        colegas contemporáneos
+                        como Ricky Martin y Enrique Iglesias, quienes se fusionaron al mercado de habla inglesa, él
+                        prefirió cantar y grabar en
+                        español en ese momento.</p>
                 </div>
+            </div>
+        </div>
+    </div>
+</div><br><br>
+</div>
+</div>
+</div>
+
+
+
+<div class="maps">
+    <section class="container">
+
+        <div class="row justify-content-around">
+
+            <div class="col-sm-3">
+
+                <h4><a class="btn btn-lg btn-outline-success" href="https://www.ironhack.com/es/madrid">IronHack
+                        Madrid</a>
+
+            </div>
+
+            <div class="col-sm-3">
+
+                <a class="btn btn-lg btn-outline-success" href="https://www.ironhack.com/es/barcelona">IronHack
+                    Barcelona</a>
+
+            </div>
+
+            <div class="col-sm-3">
+
+                <a class="btn btn-lg btn-outline-success" href="https://www.ironhack.com/es/lisboa">IronHack
+                    Lisboa</a>
+
+            </div>
+
+        </div><br>
+
+        <div class="row">
+
+
+            <div class="col-12">
+
+                <figure id="ironMap"></figure>
+            </div>
+        </div><br>
+
+
+        <div class="row justify-content-around">
+
+            <div class="col-lg-4 col-md-6 col-sm-12">
+
+                <h3>IronHack Madrid</h3>
+                <hr>
+                <p><i>Paseo de la Chopera 14 (Matadero - Casa del Lector).</i></p>
+                <p><i>28045, Madrid.</i></p>
+
+                <br>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12">
+
+                <h3>IronHack Barcelona</h3>
+                <hr>
+                <p><i>Carrer de Pamplona 96.</i></p>
+                <p><i>08018, Barcelona.</i></p>
+
+                <br>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12">
+
+                <h3>IronHack Lisboa</h3>
+                <hr>
+                <p><i>Heden Santa Apolonia Doca Jardim do Tabaco Terminal de Cruzeiros de Lisboa Edifício NW, 1º
+                        Piso</i></p>
+                <p><i>1100-651 Lisboa, Portugal.</i></p>
+
+                <br>
+
             </div>
 
         </div>
 
-    </div>
+    </section>
 
-</section>
+</div>
+
+{{!-- SCRIPS ESTÁTICOS --}}
+<script src="/javascripts/styles.js"></script>
+<script src="/javascripts/directions.js"></script>
+<script src="/javascripts/ironhack-map.js"></script>
+
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKFqXWrZMayUjf2aMRgjVus_7oqT2QGo8&callback=initMap"></script>

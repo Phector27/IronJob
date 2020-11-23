@@ -17,16 +17,7 @@ const checkRole = admittedRoles => (req, res, next) => admittedRoles.includes(re
 // ZONA PÚBLICA:
 
 // Endpoints /company
-router.get('/', (req, res, next) => {
-
-
-    Offer
-        .find()
-        .populate('company')
-        .then(offers => res.send({ offers }))
-        .catch(err => next(new Error(err)))
-
-})
+router.get('/', (req, res, next) => res.render('company/company-index'))
 
 // MOSTRAR FORMULARIO DE REGISTRO
 

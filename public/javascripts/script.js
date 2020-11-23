@@ -1,5 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
-
-  console.log('IronGenerator JS imported successfully!');
-
-}, false);
+window.onscroll = () => {
+  window.scrollY > 100 ? menu.classList.add('solid') : menu.classList.remove('solid')
+}

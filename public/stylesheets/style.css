@@ -1,44 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=B612:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+* {
+  font-family: B612; }
+
 h1, h2, h3, h4, h5, h6 {
   color: rgba(255, 255, 255, 0.781); }
 
 p {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: rgba(255, 255, 255, 0.781);
   font-weight: 400; }
 
 .form-group {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: rgba(255, 255, 255, 0.781);
   font-weight: 400; }
 
 hr {
-  border: 1px solid white; }
+  border-color: rgba(255, 255, 255, 0.781); }
 
 .card-header {
   font-size: 1.5em;
   font-weight: 800; }
 
-.navbar {
+.center {
+  text-align: center; }
+
+.menu {
   padding: 15px 40px 10px 40px;
-  background-color: transparent;
-  border-bottom: 2px solid green;
-  margin-bottom: 50px; }
+  padding-bottom: 12px;
+  position: fixed;
+  width: 100%; }
 
-.navbar a {
-  color: rgba(255, 255, 255, 0.781); }
+.menu.solid {
+  background: white;
+  color: #222; }
 
-.index {
+.menu img {
+  width: 75%; }
+
+.menu a {
+  color: #4CAF50;
+  font-weight: lighter; }
+
+.menu a:hover {
+  transition: .5s; }
+
+.first {
+  text-align: start; }
+
+.second {
+  text-align: end; }
+
+.index-company {
   margin-top: 300px; }
 
 .backnav {
-  background-color: inherit;
-  border: 2px solid rgba(255, 255, 255, 0.781);
-  border-top: 3px solid rgba(255, 255, 255, 0.781);
-  margin-top: 10px; }
+  background-color: white;
+  border-color: lightgray; }
+
+.glide img {
+  opacity: .8;
+  width: 100vw;
+  height: 70vh;
+  object-fit: cover; }
 
 .logoimg {
-  width: 35%; }
+  width: 25%; }
+
+#ironMap {
+  height: 300px; }
+
+.partners img {
+  filter: grayscale(0.5);
+  width: 120%;
+  transition: all 0.7s;
+  opacity: .7;
+  margin-top: 200px;
+  margin-bottom: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
+  justify-content: space-around; }
+
+.partners img:hover {
+  opacity: 1;
+  transform: scale(1.5); }
+
+.statement1 h1 {
+  font-weight: 900;
+  font-size: 30px;
+  margin-top: 50px;
+  margin-right: 50px;
+  margin-bottom: 150px; }
+
+.statement1 img {
+  width: 100%;
+  margin-top: 100px;
+  margin-bottom: 300px;
+  transition-duration: 2s;
+  margin-left: -350px; }
+
+.statement1 img:hover {
+  margin-left: -50px;
+  transform: scale(1); }
+
+.maps {
+  background-image: url("../images/DEFINITIVI.png");
+  background-size: auto;
+  background-repeat: no-repeat;
+  padding-top: 100px;
+  box-shadow: inset 0px 10px 20px -3px #bdb6bd;
+  padding-bottom: 100px; }
+
+.section2 {
+  background-color: white;
+  margin-top: -20px;
+  box-shadow: inset 0px 50px 30px -3px #bdb6bd; }
+
+.section3 {
+  margin-top: 100px; }
 
 body {
   margin: 0;
@@ -97,7 +175,7 @@ body {
   margin: 12px 0; }
 
 .profile {
-  padding-top: 50px;
+  margin-top: 150px;
   padding-bottom: 50px; }
 
 .deletebtn {
