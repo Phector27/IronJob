@@ -1,0 +1,128 @@
+<div class="profile">
+
+    <div class="container-fluid">
+
+        <h1 style="text-align: center;">Bienvenido a tu área privada de empresa</h1>
+        <hr><br><br>
+
+        {{#if errorMsg}}
+        <div class="btn-outline-danger" style="text-align: center; padding: 5px; margin-bottom: 20px;">
+            {{errorMsg}}</div>
+        {{/if}}
+
+
+        <div class="row justify-content-around">
+
+
+            <div class="col-md-4">
+
+                <h1>Crear nueva oferta de empleo</h1>
+                <hr>
+
+                <form method="POST" action="/company/private-company">
+
+                    <div class="form-group">
+                        <label>Nombre de la empresa</label>
+                        <input type="text" class="form-control" name="name" value="{{user.name}}" readonly/>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" value="{{user.id}}" name="company" hidden/> 
+                    </div>
+
+                    <div class="form-group">
+                        <label>Título de la oferta</label>
+                        <input type="text" class="form-control" name="title">
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="place-list">Selecciona Especialidad:</label><br>
+                            <input type="radio" name="study" value="UI/UX">UI/UX<br>
+                            <input type="radio" name="study" value="Web Development">Web Development<br>
+                            <input type="radio" name="study" value="Cyber">Cyber
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Ubicación</label>
+                        <input type="texto" class="form-control" name="location">
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="place-list">Tipo de empleo:</label><br>
+                            <input type="radio" name="style" value="Remoto">Remoto
+                            <input type="radio" name="style" value="Presencial">Presencial
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Descripción de la oferta</label>
+                        <textarea class="form-control" id="description" rows="10" name="description" maxlength="400"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email de contacto</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="Enter email" name="email">
+                        <small id="emailHelp" class="form-text text-muted">Solo compartiremos tu email de contacto con
+                            el equipo de IronHack.</small>
+                    </div>
+
+                    <button type="submit" class="btn btn-outline-success btn-block">Crear nueva oferta</button>
+                </form>
+            </div>
+
+
+            <div class="col-md-4">
+
+
+                {{#each allOffers}}
+
+
+
+                <div class="card border-dark mb-5" style="max-width: 40rem;">
+                    <div class="card-header">{{title}}</div>
+                    <div class="card-body text-dark">
+                        <h5 class="card-title text-dark"><strong>{{study}}</strong> - {{name}}</h5>
+                        <p class="card-text text-dark"><strong>Ubicación del puesto: </strong>{{location}}</p>
+                        <p class="card-text text-dark"><strong>{{style}} - </strong> {{description}}</p>
+                        <p class="card-text text-dark"><strong>Contacto: </strong>{{email}}</p>
+
+                        <div class="card-footer bg-transparent border-success">
+
+                            <div class="row justify-content-between">
+
+                                <div class="col-md-3">
+
+                                    <a href="/company/private-company/edit?id={{id}}"
+                                        class="btn btn-outline-dark btn-sm">Editar
+                                        oferta</a>
+
+                                </div>
+
+                                <div class="col-md-3">
+
+                                    <a href="/company/private-company/delete?id={{id}}"
+                                        class="btn btn-outline-danger btn-sm deletebtn">
+                                        Eliminar oferta</a>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                {{/each}}
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

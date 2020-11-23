@@ -1,0 +1,78 @@
+<div class="container-fluid">
+
+    <h1 style="text-align: center;">Bienvenido a tu área privada</h1>
+    <hr><br><br>
+
+    <div class="row justify-content-around">
+
+
+        <div class="col-md-5 left">
+
+            {{!-- {{#if errorMsg}}
+            <div class="btn-outline-danger" style="text-align: center; padding: 5px; margin-bottom: 20px;">
+                {{errorMsg}}</div>
+            {{/if}} --}}
+
+
+            <h1>Editar oferta: {{editOffer.title}}</h1>
+            <hr>
+
+            <form method="POST" action="/company/private-company/edit?id={{editOffer.id}}">
+
+
+                <div class="form-group">
+                    <label>Nombre de la empresa</label>
+                    <input type="text" class="form-control" name="name" value="{{editOffer.name}}" readonly/>
+                </div>
+
+
+                <div class="form-group">
+                    <label>Título de la oferta</label>
+                    <input type="text" class="form-control" name="title" value="{{editOffer.title}}">
+                </div>
+
+
+                <div class="form-group">
+                    <div class="form-group">
+                        <label for="place-list">Selecciona Especialidad:</label><br>
+                        <input type="radio" name="study" value="UI/UX">UI/UX<br>
+                        <input type="radio" name="study" value="Web Development">Web Development<br>
+                        <input type="radio" name="study" value="Cyber">Cyber
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Ubicación</label>
+                    <input type="texto" class="form-control" name="location" value="{{editOffer.location}}">
+                </div>
+
+                <div class="form-group">
+                    <div class="form-group">
+                        <label for="place-list">Tipo de empleo:</label><br>
+                        <input type="radio" name="style" value="Remoto">Remoto
+                        <input type="radio" name="style" value="Presencial">Presencial
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Descripción de la oferta</label>
+                    <textarea class="form-control" id="description" rows="10" name="description"
+                        value="{{editOffer.description}}">{{editOffer.description}}</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email de contacto</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        placeholder="Enter email" name="email" value="{{editOffer.email}}">
+                    <small id="emailHelp" class="form-text text-muted">Solo compartiremos tu email de contacto con el
+                        equipo de IronHack.</small>
+                </div>
+
+
+                <button type="submit" class="btn btn-dark btn-block">Editar y volver</button>
+            </form>
+        </div>
+
+    </div>
+
+</div>

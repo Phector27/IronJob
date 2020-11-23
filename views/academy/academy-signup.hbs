@@ -1,0 +1,68 @@
+<div>
+
+    <div class="login-box">
+
+        <form method="POST" action="/academy/signup">
+            <h1>Signup</h1>
+            <div class="textbox">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Username" name="username">
+            </div>
+
+            <div class="textbox">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password" placeholder="Password">
+            </div>
+
+            <input type="submit" class="btn2" value="Sign up">
+
+            {{#if errorMsg}}
+            <div class="btn-outline-danger" style="text-align: center; padding: 5px;">
+                {{errorMsg}}</div>
+            {{/if}}
+        </form>
+
+    </div>
+
+</div>
+
+
+{{!-- <div class="container">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-5">
+
+            <h1>Sign Up</h1>
+
+            <form method="POST" action="/company/signup">
+
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" class="form-control" name="username">
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="password">
+                </div>
+
+                <div class="form-group">
+                    <label>Nombre de la Empresa</label>
+                    <input type="text" class="form-control" name="name">
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+
+                {{#if errorMsg}}
+                <div style="background: red; color: white; text-align: center; padding: 10px; margin-top:10px">
+                    {{errorMsg}}</div>
+                {{/if}}
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div> --}}

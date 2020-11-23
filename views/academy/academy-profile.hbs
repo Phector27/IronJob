@@ -1,0 +1,56 @@
+<div class="profile">
+
+    <div class="container-fluid">
+
+        <h1 style="text-align: center;">Bienvenido al área privada de IronHack</h1>
+        <h3 style="text-align: center;">Aquí se muestran todas las ofertas de empleo publicadas</h3>
+        <hr><br><br>
+
+        {{#if errorMsg}}
+        <div class="btn-outline-danger" style="text-align: center; padding: 5px; margin-bottom: 20px;">
+            {{errorMsg}}</div>
+        {{/if}}
+
+
+
+        <div class="row justify-content-between">
+
+            {{#each allOffers}}
+
+            <div class="col-lg-4 col-md-6 col-sm-12">
+
+                <div class="card border-dark mb-5" style="max-width: 40rem;">
+                    <div class="card-header">{{title}}</div>
+                    <div class="card-body text-dark">
+                        <h5 class="card-title text-dark"><strong>{{study}}</strong> - {{name}}</h5>
+                        <p class="card-text text-dark"><strong>{{style}} - </strong> {{description}}</p>
+                        <p class="card-text text-dark"><strong>Contacto: </strong> {{email}}</p>
+
+                        <div class="card-footer bg-transparent border-success">
+
+                            <div class="row">
+
+                                <div class="col-md-12">
+
+                                    <a href="/academy/private-academy/delete?id={{id}}"
+                                        class="btn btn-block btn-outline-danger btn-md">
+                                        Eliminar oferta</a>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {{/each}}
+
+        </div>
+
+    </div>
+
+</div>

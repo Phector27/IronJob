@@ -1,13 +1,12 @@
-# IronWork
+# Express generator
 
-Platform for companies interested to get young talents inside IronHack.
+Boilerplate for a basic ExpressJS backend
 
+## Install
 
-![](https://i.ibb.co/CKbr6Cv/ENDPOINTS-ACTUALIZADO2.png)
+- Run `npm i` on the root directory
 
+## Run
 
-
-
-
-
-
+- Create a `.env` file on the root directory to populate the database (`DB`) and port (`PORT`)
+- Run `npm run dev` command on the root directory
