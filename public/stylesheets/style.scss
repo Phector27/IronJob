@@ -41,10 +41,13 @@ hr {
   padding-bottom: 12px;
   position: fixed;
   width: 100%;
+  transition: all .8s;
 }
+
 .menu.solid {
   background: white;
   color: #222;
+  transition: all 1.5s;
 }
 
 .menu img {
@@ -84,7 +87,6 @@ hr {
 }
 
 .glide img {
-  opacity: .8;
   width: 100vw;
   height: 70vh;
   object-fit: cover;
