@@ -9,4 +9,6 @@ module.exports = app => {
     app.use('/company', require('./company.routes.js'))
 
     app.use('/academy', require('./academy.routes.js'))
+
+    app.use('/student', require('./student.routes'))
 }

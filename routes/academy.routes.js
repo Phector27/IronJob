@@ -1,4 +1,4 @@
-// /*jshint esversion: 6 */
+/*jshint esversion: 6 */
 
 const express = require('express')
 const router = express.Router()
@@ -77,7 +77,7 @@ router.get('/logout', (req, res) => {
 
 //ZONA PRIVADA , 'IRONHACK-RECRUITER'.
 
-// PERFIL-AREA PRIVADA DE EMPRESAS - VISUALIZACIÓN, EDICIÓN Y CREACIÓN DE NUEVAS OFERTAS
+// PERFIL-AREA PRIVADA DE IRONHACK - VISUALIZACIÓN Y ELIMINACIÓN DE OFERTAS
 router.get('/private-academy', isLogged, checkRole(['IRONHACK-RECRUITER']), (req, res, next) => {
 
     Offer
