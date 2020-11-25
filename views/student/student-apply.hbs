@@ -1,0 +1,69 @@
+<div class="profile">
+
+    <div class="container">
+
+        <h2 style="text-align: center;">🚀 A un paso de cambiar tu vida 🚀</h2>
+        <hr><br><br>
+
+        {{#if errorMsg}}
+        <div class="btn-outline-danger" style="text-align: center; padding: 5px; margin-bottom: 20px;">
+            {{errorMsg}}</div>
+        {{/if}}
+
+        <div class="row">
+
+            <div class="col-12">
+
+                <div class="card border-dark mb-5" style="max-width: 80rem;">
+                    <div class="card-header">{{selectOffer.title}}</div>
+                    <div class="card-body text-dark">
+                        <h5 class="card-title text-dark"><strong>{{selectOffer.study}}</strong> - {{selectOffer.name}}
+                        </h5>
+                        <p class="card-text text-dark"><strong>Ubicación del puesto: </strong> {{selectOffer.location}}
+                        </p>
+                        <p class="card-text text-dark"><strong>{{selectOffer.style}} - </strong>
+                            {{selectOffer.description}}</p><br>
+                        <p class="card-text text-dark" style="text-align: center"><strong>Escribe a Ironhack por qué te interesa esta oferta:
+                            </strong></p>
+
+                        <div class="row justify-content-center">
+                            <div class="col-12">
+                                <form method="POST" action="/student/private-student/apply-offer?id={{id}}"><hr style="background-color: gray;">
+
+
+                                    <div class='form-group'>
+                                        <label for='to' style="color: black;"></label>
+                                        <input name='email' type='email' class='form-control' id='to' value="ironjobrc@gmail.com" hidden/>
+                                    </div>
+
+                                    <div class='form-group'>
+                                        <label for='subject' style="color: black;">Asunto</label>
+                                        <input name='subject' type='text' class='form-control' id='subject'
+                                            placeholder="Interesad@ en oferta...">
+                                    </div>
+
+                                    <div class='form-group'>
+                                        <label for='message'
+                                            style="color: black; jusfity-content: center;">Mensaje</label>
+                                        <textarea class="form-control" name="message" id="message" rows="5"
+                                            placeholder="Hola! Creo que mi perfil encaja..."></textarea>
+                                    </div>
+                                    <button type='submit' class='btn btn-outline-success btn-block'>Aplicar a esta
+                                        oferta</button>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>

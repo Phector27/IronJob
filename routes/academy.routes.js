@@ -45,7 +45,7 @@ router.post('/signup', (req, res, next) => {
             User
                 .create({ username, password: hashPass })
                 .then(() => res.redirect('/academy/login'))
-                .catch(() => res.render('academy/academy-signup', { errorMsg: 'Error. Contacta con un administrador de IronHack.' }))
+                .catch(() => res.render('academy/academy-signup', { errorMsg: 'Error. Contacta con el administrador de la web.' }))
 
         })
 

@@ -26,7 +26,7 @@
 
                                 <div class="col-md-12">
 
-                                    <a href="/"
+                                    <a href="/student/private-student/apply-offer?id={{id}}"
                                         class="btn btn-block btn-outline-info btn-md">
                                         Me interesa</a>
                                 </div>
@@ -48,3 +48,34 @@
     </div>
 
 </div>
+
+{{#if infoSendMail}}
+
+<section class="container index-company" style="margin-top: -50px;">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-8">
+
+            {{!-- DIBUJAR CUADRADO VER COMO HACERLO / PARALLAX /--}}
+            <div style="border: 1px solid green;">
+                <div class="text-white text-center py-5 px-4">
+                    <div>
+                        <h2 class="card-title h1-responsive pt-3 mb-5 font-bold">
+                            <a href="/"><img src="../../images/LOGO-IRONJOB-2LINE (1).png" alt="IronJob logo"
+                                    class="logoimg"></a>
+                        </h2>
+                        <p class="mx-5 mb-5" style="color: white; font-weigth: 700;">Tu mensaje ha sido enviado con éxito!
+                        </p><br>
+                        <a href="/student/private-student" class="btn btn-success">🥇 Aplicar en más ofertas 🥇</a>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+{{/if}}

@@ -3,6 +3,8 @@
 const express = require('express')
 const router = express.Router()
 const passport = require('passport')
+const transporter = require('./../configs/nodemailer.config')
+
 
 const User = require('../models/user.model')
 const Offer = require('../models/offer.model')
@@ -44,7 +46,7 @@ router.post('/signup', (req, res, next) => {
             User
                 .create({ username, password: hashPass })
                 .then(() => res.redirect('/student/login'))
-                .catch(() => res.render('student/student-signup', { errorMsg: 'Nombre de empresa ya registrada. Contacta con el responsable de tu empresa.' }))
+                .catch(() => res.render('student/student-signup', { errorMsg: 'Error. Contacta con un administrador de IronHack.' }))
 // revisar error 
         })
 
@@ -87,6 +89,30 @@ router.get('/private-student', isLogged, checkRole(['Student']), (req, res, next
 })
 
 
+router.get('/private-student/apply-offer', isLogged, checkRole(['Student']), (req, res, next) => { 
+
+    Offer
+        .findById(req.query.id)
+        .then(selectOffer => res.render('student/student-apply', { selectOffer }))
+        .catch(err => next(new Error(err)))
+
+})
+
+router.post('/private-student/apply-offer', (req, res, next) => {
+
+    const { email, subject, message } = req.body
+
+    transporter
+        .sendMail({
+            from: '"IronJob Estudiante Interesado " <noreply@ironjob.com>',
+            to: email,
+            subject,
+            text: message,
+            html: message
+        })
+        .then(infoSendMail => res.render('student/student-profile', { infoSendMail }))
+        .catch(err => next(new Error(err)))
+})
 
 
 module.exports = router
