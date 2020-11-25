@@ -79,7 +79,7 @@ router.get('/private-student/apply-offer', isLogged, checkRole(['Student']), (re
 
     Offer
         .findById(req.query.id)
-        .then(selectOffer => res.render('student/student-apply', { selectOffer }))
+        .then(selectOffer => res.render('student/student-apply', { selectOffer, user: req.user }))
         .catch(err => next(new Error(err)))
 })
 
@@ -89,7 +89,7 @@ router.post('/private-student/apply-offer', (req, res, next) => {
 
     transporter
         .sendMail({
-            from: '"IronJob Estudiante Interesado " <noreply@ironjob.com>',
+            from: '"Estudiante interesad@ en oferta de trabajo" <noreply@ironjob.com>',
             to: email,
             subject,
             text: message,
