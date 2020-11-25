@@ -7,21 +7,17 @@ const passport = require('passport')
 const User = require('../models/user.model')
 const Offer = require('../models/offer.model')
 
-
 const bcrypt = require('bcryptjs')
 const bcryptSalt = 10
-
 
 const isLogged = (req, res, next) => req.isAuthenticated() ? next() : res.render('academy/academy-login', { errorMsg: 'Acceso denegado. Haz login para acceder a esta zona de la web.' })
 const checkRole = admittedRoles => (req, res, next) => admittedRoles.includes(req.user.role) ? next() : res.render('academy/academy-login', { errorMsg: 'Acceso denegado. No tienes permisos para ver esta zona de la web. Por favor, contacta con un administrador de IronHack para que modifique tus permisos.' })
 
 
-// MOSTRAR FORMULARIO DE REGISTRO
-
+// Signup Form
 router.get('/signup', (req, res, next) => res.render('academy/academy-signup'))
 
-// GESTIONAR REGISTRO EN BBDD
-
+// Signup Form Management
 router.post('/signup', (req, res, next) => {
 
     const { username, password } = req.body
@@ -46,20 +42,15 @@ router.post('/signup', (req, res, next) => {
                 .create({ username, password: hashPass })
                 .then(() => res.redirect('/academy/login'))
                 .catch(() => res.render('academy/academy-signup', { errorMsg: 'Error. Contacta con el administrador de la web.' }))
-
         })
-
         .catch(err => next(err))
-
 })
 
 
-// MOSTRAR FORMULARIO LOGIN
-
+// Login Form
 router.get('/login', (req, res, next) => res.render('academy/academy-login', { errorMsg: req.flash('error') }))
 
-// GESTIONAR FORMULARIO LOGIN
-
+// Login Form Management
 router.post('/login', passport.authenticate('local', {
     successRedirect: '/academy/private-academy', //are-privada/perfil
     failureRedirect: '/academy/login',
@@ -67,50 +58,40 @@ router.post('/login', passport.authenticate('local', {
     passReqToCallback: true
 }))
 
-
-// CERRAR SESION
+// Logout
 router.get('/logout', (req, res) => {
     req.logout()
     res.redirect('/academy/login')
 })
 
+// Private Area , 'IRONHACK-RECRUITER'.
 
-//ZONA PRIVADA , 'IRONHACK-RECRUITER'.
-
-// PERFIL-AREA PRIVADA DE IRONHACK - VISUALIZACIÓN Y ELIMINACIÓN DE OFERTAS
+// Profile-Private Area for IRONHACK
 router.get('/private-academy', isLogged, checkRole(['IRONHACK-RECRUITER']), (req, res, next) => {
 
     Offer
         .find()
         .then(allOffers => res.render('academy/academy-profile', { allOffers }))
         .catch(err => next(new Error(err)))
-
 })
 
-
-// Panel control
-
+// Control Panel
 router.get('/panel-control', isLogged, checkRole(['IRONHACK-RECRUITER']), (req, res, next) => {
 
     User
         .find()
         .then(allUsers => res.render('academy/academy-panel-control', { allUsers }))
         .catch(err => next(new Error(err)))
-
 })
-
 
 // Edit user roles
 router.get('/panel-control/edit', isLogged, checkRole(['IRONHACK-RECRUITER']), (req, res, next) => {
-
 
     User
         .findById(req.query.id)
         .then(editUserRole => res.render('academy/academy-edit', { editUserRole }))
         .catch(err => next(new Error(err)))
-
 })
-
 
 router.post('/panel-control/edit', isLogged, checkRole(['IRONHACK-RECRUITER']), (req, res, next) => {
 
@@ -120,13 +101,9 @@ router.post('/panel-control/edit', isLogged, checkRole(['IRONHACK-RECRUITER']), 
         .findByIdAndUpdate(req.query.id, { role })
         .then(() => res.redirect('/academy/panel-control'))
         .catch(err => next(new Error(err)))
-
 })
 
-
-
 // Delete user
-
 router.get('/panel-control/delete', isLogged, checkRole(['IRONHACK-RECRUITER']), (req, res, next) => {
 
     User
@@ -135,9 +112,7 @@ router.get('/panel-control/delete', isLogged, checkRole(['IRONHACK-RECRUITER']),
         .catch(err => next(new Error(err)))
 })
 
-
-
-// ELIMINAR UNA OFERTA DE EMPLEO
+// Delete Offer Job
 router.get('/private-academy/delete', isLogged, checkRole(['IRONHACK-RECRUITER']), (req, res, next) => {
 
     Offer

@@ -1,28 +1,20 @@
 <div>
-
     <div class="login-box">
-
         <form method="POST" action="/student/login">
             <h1>Login students</h1>
             <div class="textbox">
                 <i class="fas fa-user"></i>
                 <input type="text" placeholder="Username" name="username">
             </div>
-
             <div class="textbox">
                 <i class="fas fa-lock"></i>
                 <input type="password" name="password" placeholder="Password">
             </div>
-
             <input type="submit" class="btn2" value="Log in">
-
             {{#if errorMsg}}
             <div class="btn-outline-danger" style="text-align: center; padding: 5px;">
                 {{errorMsg}}</div>
             {{/if}}
-
         </form>
-
     </div>
-
 </div>

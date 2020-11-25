@@ -14,17 +14,15 @@ const isLogged = (req, res, next) => req.isAuthenticated() ? next() : res.render
 const checkRole = admittedRoles => (req, res, next) => admittedRoles.includes(req.user.role) ? next() : res.render('company/company-login', { errorMsg: 'Acceso denegado. No tienes permisos para ver esta zona de la web. Por favor, contacta con un administrador de IronHack para que modifique tus permisos.' })
 
 
-// ZONA PÚBLICA:
+// Public Area:
 
 // Endpoints /company
 router.get('/', (req, res, next) => res.render('company/company-index'))
 
-// MOSTRAR FORMULARIO DE REGISTRO
-
+// Sign up Form
 router.get('/signup', (req, res, next) => res.render('company/company-signup'))
 
-// GESTIONAR REGISTRO EN BBDD
-
+// Sign up Form Management
 router.post('/signup', (req, res, next) => {
 
     const { username, password, name } = req.body
@@ -49,20 +47,18 @@ router.post('/signup', (req, res, next) => {
                 .create({ username, password: hashPass, name })
                 .then(() => res.render('welcome'))
                 .catch(() => res.render('company/company-signup', { errorMsg: 'Error. Contacta con un administrador de IronHack.' }))
-
+            
         })
 
         .catch(err => next(err))
-
+    
 })
 
 
-// MOSTRAR FORMULARIO LOGIN
-
+// Login Form
 router.get('/login', (req, res, next) => res.render('company/company-login', { errorMsg: req.flash('error') }))
 
-// GESTIONAR FORMULARIO LOGIN
-
+// Login Form Management
 router.post('/login', passport.authenticate('local', {
     successRedirect: '/company/private-company', //are-privada/perfil
     failureRedirect: '/company/login',
@@ -70,33 +66,26 @@ router.post('/login', passport.authenticate('local', {
     passReqToCallback: true
 }))
 
-
-// CERRAR SESION
+// Logout
 router.get('/logout', (req, res) => {
     req.logout()
     res.redirect('/company/login')
 })
 
+//Private Zone , 'BUSINESS-RECRUITER'.
 
-
-//ZONA PRIVADA , 'BUSINESS-RECRUITER'.
-
-
-
-// PERFIL-AREA PRIVADA DE EMPRESAS - VISUALIZACIÓN, EDICIÓN Y CREACIÓN DE NUEVAS OFERTAS
+// Profile-Private Area Zone for Company
 router.get('/private-company', isLogged, checkRole(['BUSINESS-RECRUITER']), (req, res, next) => {
 
     Offer
         .find({ company: req.user.id })
         .then(allOffers => res.render('company/company-profile', { allOffers, user: req.user }))
         .catch(err => next(new Error(err)))
-
 })
 
 router.post('/private-company', isLogged, checkRole(['BUSINESS-RECRUITER']), (req, res, next) => {
 
     const { title, location, study, style, description, name, email, company } = req.body
-
 
     if (!title || !location || !study || !style || !description || !email) {
         res.render('company/company-profile', { errorMsg: 'Por favor, rellena todos los campos para crear la oferta' })
@@ -107,11 +96,9 @@ router.post('/private-company', isLogged, checkRole(['BUSINESS-RECRUITER']), (re
         .create({ title, location, study, style, description, name, email, company })
         .then(() => res.redirect('/company/private-company'))
         .catch(err => next(new Error(err)))
-
 })
 
-
-// ELIMINAR UNA OFERTA DE EMPLEO
+// Delete Offer Job
 router.get('/private-company/delete', isLogged, checkRole(['BUSINESS-RECRUITER']), (req, res, next) => {
 
     Offer
@@ -120,18 +107,14 @@ router.get('/private-company/delete', isLogged, checkRole(['BUSINESS-RECRUITER']
         .catch(err => next(new Error(err)))
 })
 
-
-// EDICIÓN DE LA OFERTA DEL COPÓN
+// Edit Offer Job
 router.get('/private-company/edit', isLogged, checkRole(['BUSINESS-RECRUITER']), (req, res, next) => {
-
 
     Offer
         .findById(req.query.id)
         .then(editOffer => res.render('company/company-edit', { editOffer }))
         .catch(err => next(new Error(err)))
-
 })
-
 
 router.post('/private-company/edit', isLogged, checkRole(['BUSINESS-RECRUITER']), (req, res, next) => {
 
@@ -141,8 +124,6 @@ router.post('/private-company/edit', isLogged, checkRole(['BUSINESS-RECRUITER'])
         .findByIdAndUpdate(req.query.id, { title, location, study, style, description, name, email })
         .then(() => res.redirect('/company/private-company'))
         .catch(err => next(new Error(err)))
-
 })
-
 
 module.exports = router

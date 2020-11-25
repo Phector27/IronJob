@@ -1,62 +1,29 @@
 <div class="profile">
-
     <div class="container-fluid">
-
         <h1 style="text-align: center;">Bienvenido al área privada de Estudiante</h1>
         <h3 style="text-align: center;">Aquí se muestran todas las ofertas de empleo publicadas</h3>
         <hr><br><br>
 
         <div class="row justify-content-between">
-
-            {{#each allOffers}}
-
-            <div class="col-lg-4 col-md-6 col-sm-12">
-
-                <div class="card border-dark mb-5" style="max-width: 40rem;">
-                    <div class="card-header">{{title}}</div>
-                    <div class="card-body text-dark">
-                        <h5 class="card-title text-dark"><strong>{{study}}</strong> - {{name}}</h5>
-                        <p class="card-text text-dark"><strong>Ubicación del puesto: </strong> {{location}}</p>
-                        <p class="card-text text-dark"><strong>{{style}} - </strong> {{description}}</p>
-                        <p class="card-text text-dark"><strong>Contacto: </strong> {{email}}</p>
-
-                        <div class="card-footer bg-transparent border-success">
-
-                            <div class="row">
-
-                                <div class="col-md-12">
-
-                                    <a href="/student/private-student/apply-offer?id={{id}}"
-                                        class="btn btn-block btn-outline-info btn-md">
-                                        Me interesa</a>
-                                </div>
-
-                            </div>
-
-                        </div>
-
+        {{#each allOffers}}
+            <div class="col-4">
+                    <div class="card1" href="#" style="max-width: 40rem; height: inherit">
+                        <h3>{{study}} - {{name}} - {{location}}</h3>
+                        <p class="small">{{description}}</p>
+                        <p class="small"><strong>Contacto: </strong> - {{email}}</p>
+                        <a href="/student/private-student/apply-offer?id={{id}}"
+                            class="btn btn-block btn-outline-info btn-md">Me interesa</a>
                     </div>
-
                 </div>
-
+                {{/each}}
             </div>
-
-            {{/each}}
-
         </div>
-
     </div>
 
-</div>
-
 {{#if infoSendMail}}
-
 <section class="container index-company" style="margin-top: -50px;">
-
     <div class="row justify-content-center">
-
         <div class="col-md-8">
-
             {{!-- DIBUJAR CUADRADO VER COMO HACERLO / PARALLAX /--}}
             <div style="border: 1px solid green;">
                 <div class="text-white text-center py-5 px-4">
@@ -65,17 +32,14 @@
                             <a href="/"><img src="../../images/LOGO-IRONJOB-2LINE (1).png" alt="IronJob logo"
                                     class="logoimg"></a>
                         </h2>
-                        <p class="mx-5 mb-5" style="color: white; font-weigth: 700;">Tu mensaje ha sido enviado con éxito!
+                        <p class="mx-5 mb-5" style="color: white; font-weigth: 700;">Tu mensaje ha sido enviado con
+                            éxito!
                         </p><br>
                         <a href="/student/private-student" class="btn btn-success">🥇 Aplicar en más ofertas 🥇</a>
-
                     </div>
                 </div>
             </div>
-
         </div>
-
     </div>
-
 </section>
 {{/if}}

@@ -83,7 +83,7 @@ hr {
   width: 100%;
   transition: all 1s;
   opacity: .7;
-  margin-top: 200px;
+  margin-top: 50px;
   margin-bottom: 100px;
   padding-left: 50px;
   padding-right: 50px; }
@@ -92,6 +92,68 @@ hr {
   filter: grayscale(0);
   opacity: 1;
   transform: scale(1.3); }
+
+.motivation {
+  position: absolute;
+  top: 55%;
+  left: 45%;
+  transform: translate(-50%, -50%); }
+
+.motivation h2 {
+  padding: 0;
+  margin: 0;
+  color: #fff;
+  text-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  font-size: 6vw;
+  text-transform: uppercase; }
+
+.motivation span:before {
+  content: ' TALENTO';
+  animation: animate infinite 10.5s;
+  color: #4CAF50; }
+
+@keyframes animate {
+  20% {
+    content: ' jovenes'; }
+  50% {
+    content: ' solucion'; }
+  100% {
+    content: ' talento'; } }
+
+.card1 {
+  display: block;
+  position: relative;
+  max-width: 262px;
+  background-color: #f2f8f9;
+  border-radius: 4px;
+  padding: 32px 24px;
+  margin: 12px;
+  text-decoration: none;
+  z-index: 0;
+  overflow: hidden; }
+  .card1:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -16px;
+    right: -16px;
+    background: #4CAF50;
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    transform: scale(1);
+    transform-origin: 50% 50%;
+    transition: transform 0.25s ease-out; }
+  .card1:hover:before {
+    transform: scale(40); }
+
+.card1:hover p {
+  transition: all 0.3s ease-out;
+  color: rgba(255, 255, 255, 0.8); }
+
+.card1:hover h3 {
+  transition: all 0.3s ease-out;
+  color: #ffffff; }
 
 .statement1 h1 {
   font-weight: 900;
@@ -110,6 +172,26 @@ hr {
 .statement1 img:hover {
   margin-left: -50px;
   transform: scale(1); }
+
+#indexcard {
+  padding: 30px;
+  margin-top: 150px;
+  transition-duration: 1s;
+  margin-right: 100px;
+  border: 2px solid #4CAF50;
+  border-radius: 10px; }
+
+#indexcard h2,
+p {
+  color: green; }
+
+#indexcard:hover {
+  padding: 30px;
+  margin-top: 50px;
+  position: relative;
+  -webkit-box-shadow: 0px 91px 68px 3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 91px 68px 3px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 91px 68px 3px rgba(0, 0, 0, 0.75); }
 
 .maps {
   background-image: url("../images/DEFINITIVI.png");
@@ -184,10 +266,15 @@ body {
   margin: 12px 0; }
 
 .profile {
-  margin-top: 100px;
+  margin-top: 150px;
   padding-bottom: 50px; }
 
 .deletebtn {
   margin-left: -20px; }
+
+.SN img {
+  display: flex;
+  align-items: center;
+  width: 5%; }
 
 /*# sourceMappingURL=style.css.map */

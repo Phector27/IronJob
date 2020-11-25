@@ -5,24 +5,19 @@ const router = express.Router()
 const passport = require('passport')
 const transporter = require('./../configs/nodemailer.config')
 
-
 const User = require('../models/user.model')
 const Offer = require('../models/offer.model')
-
 
 const bcrypt = require('bcryptjs')
 const bcryptSalt = 10
 
-
 const isLogged = (req, res, next) => req.isAuthenticated() ? next() : res.render('student/student-login', { errorMsg: 'Acceso denegado. Haz login para acceder a esta zona de la web.' })
 const checkRole = admittedRoles => (req, res, next) => admittedRoles.includes(req.user.role) ? next() : res.render('student/student-login', { errorMsg: 'Acceso denegado. No tienes permisos para ver esta zona de la web. Por favor, contacta con un administrador de IronHack para que modifique tus permisos.' })
 
-// MOSTRAR FORMULARIO DE REGISTRO
-
+// Sign up form
 router.get('/signup', (req, res, next) => res.render('student/student-signup'))
 
-// GESTIONAR REGISTRO EN BBDD
-
+// Sign up form management
 router.post('/signup', (req, res, next) => {
 
     const { username, password } = req.body
@@ -47,47 +42,38 @@ router.post('/signup', (req, res, next) => {
                 .create({ username, password: hashPass })
                 .then(() => res.redirect('/student/login'))
                 .catch(() => res.render('student/student-signup', { errorMsg: 'Error. Contacta con un administrador de IronHack.' }))
-// revisar error 
         })
-
         .catch(err => next(err))
-
 })
 
 
-// MOSTRAR FORMULARIO LOGIN
-
+// Login Form
 router.get('/login', (req, res, next) => res.render('student/student-login', { errorMsg: req.flash('error') }))
 
-// GESTIONAR FORMULARIO LOGIN
-
+// Login Form Management
 router.post('/login', passport.authenticate('local', {
-    successRedirect: '/student/private-student', //are-privada/perfil
+    successRedirect: '/student/private-student',
     failureRedirect: '/student/login',
     failureFlash: true,
     passReqToCallback: true
 }))
 
-
-// CERRAR SESION
+// Logout
 router.get('/logout', (req, res) => {
     req.logout()
     res.redirect('/student/login')
 })
 
+//Private Zone , 'STUDENT'.
 
-//ZONA PRIVADA , 'STUDENT'.
-
-// PERFIL-AREA PRIVADA DE ESTUDIANTES - VISUALIZACIÓN DE OFERTAS Y CONTACTO
+// Profile -Private Area for Students
 router.get('/private-student', isLogged, checkRole(['Student']), (req, res, next) => {
 
     Offer
         .find()
         .then(allOffers => res.render('student/student-profile', { allOffers }))
         .catch(err => next(new Error(err)))
-
 })
-
 
 router.get('/private-student/apply-offer', isLogged, checkRole(['Student']), (req, res, next) => { 
 
@@ -95,7 +81,6 @@ router.get('/private-student/apply-offer', isLogged, checkRole(['Student']), (re
         .findById(req.query.id)
         .then(selectOffer => res.render('student/student-apply', { selectOffer }))
         .catch(err => next(new Error(err)))
-
 })
 
 router.post('/private-student/apply-offer', (req, res, next) => {

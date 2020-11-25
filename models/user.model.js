@@ -3,7 +3,10 @@ const Schema = mongoose.Schema
 
 const userSchema = new Schema({
 
-    username: { type: String, unique: true },
+  username: {
+    type: String,
+    unique: true,
+  },
     name: String,
     password: String,
     role: {
@@ -11,7 +14,6 @@ const userSchema = new Schema({
       enum: ['IRONHACK-RECRUITER', 'BUSINESS-RECRUITER', 'Student', 'Guest'],
       default: 'Guest',
     }
-
   }, { timestamps: true })
 
 module.exports = mongoose.model('User', userSchema)
