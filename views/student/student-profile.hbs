@@ -7,10 +7,10 @@
         <div class="row justify-content-between">
         {{#each allOffers}}
             <div class="col-4">
-                    <div class="card1" href="#" style="max-width: 40rem; height: inherit">
-                        <h3>{{study}} - {{name}} - {{location}}</h3>
-                        <p class="small">{{description}}</p>
-                        <p class="small"><strong>Contacto: </strong> - {{email}}</p>
+                    <div class="card1" href="#" style="max-width: 40rem;">
+                        <h3>{{study}} - {{name}}</h3>
+                        <h4>{{location}} - {{style}}</h4>
+                        <p class="small"><strong>Descripción: </strong>{{description}}</p>
                         <a href="/student/private-student/apply-offer?id={{id}}"
                             class="btn btn-block btn-outline-info btn-md">Me interesa</a>
                     </div>

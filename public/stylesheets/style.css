@@ -50,15 +50,23 @@ hr {
   transition: .5s; }
 
 .first {
-  text-align: start; }
+  text-align: end;
+  max-width: 100px; }
 
 .second {
-  text-align: end;
-  margin-left: 20px;
-  max-width: 200px; }
+  text-align: center;
+  margin-right: 20px;
+  max-width: 100px; }
+
+.third {
+  text-align: start;
+  max-width: 100px; }
 
 .index-company {
   margin-top: 300px; }
+
+.companyedit {
+  margin-top: 150px; }
 
 .backnav {
   background-color: white;
@@ -119,6 +127,9 @@ hr {
     content: ' solucion'; }
   100% {
     content: ' talento'; } }
+
+.navbar {
+  margin-bottom: 200px; }
 
 .card1 {
   display: block;
@@ -201,10 +212,14 @@ p {
   box-shadow: inset 0px 10px 20px -3px #bdb6bd;
   padding-bottom: 100px; }
 
+.maps p {
+  color: #bdb6bd; }
+
 .section2 {
   background-color: white;
   margin-top: -20px;
-  box-shadow: inset 0px 50px 30px -3px #bdb6bd; }
+  box-shadow: inset 0px 50px 30px -3px #bdb6bd;
+  padding-bottom: 150px; }
 
 .section3 {
   margin-top: 100px; }
@@ -274,6 +289,7 @@ body {
 
 .SN img {
   display: flex;
+  flex-direction: column;
   align-items: center;
   width: 5%; }
 

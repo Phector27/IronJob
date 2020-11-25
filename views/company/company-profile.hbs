@@ -46,7 +46,7 @@
                     <div class="form-group">
                         <label for="description">Descripción de la oferta</label>
                         <textarea class="form-control" id="description" rows="10" name="description"
-                            maxlength="400"></textarea>
+                            maxlength="400" minlength="250"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email de contacto</label>
@@ -59,9 +59,9 @@
                     <button type="submit" class="btn btn-outline-success btn-block">Crear nueva oferta</button>
                 </form>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 {{#each allOffers}}
-                <div class="card border-dark mb-5" style="max-width: 40rem;">
+                <div class="card border-dark mb-5" style="max-width: 60rem;">
                     <div class="card-header">{{title}}</div>
                     <div class="card-body text-dark">
                         <h5 class="card-title text-dark"><strong>{{study}}</strong> - {{name}}</h5>
