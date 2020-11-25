@@ -8,8 +8,8 @@ const userSchema = new Schema({
     password: String,
     role: {
       type: String,
-      enum: ['IRONHACK-RECRUITER', 'BUSINESS-RECRUITER', 'Student'],
-      default: 'BUSINESS-RECRUITER',
+      enum: ['IRONHACK-RECRUITER', 'BUSINESS-RECRUITER', 'Student', 'Guest'],
+      default: 'Guest',
     }
 
   }, { timestamps: true })

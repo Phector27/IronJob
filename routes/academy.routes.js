@@ -13,7 +13,7 @@ const bcryptSalt = 10
 
 
 const isLogged = (req, res, next) => req.isAuthenticated() ? next() : res.render('academy/academy-login', { errorMsg: 'Acceso denegado. Haz login para acceder a esta zona de la web.' })
-const checkRole = admittedRoles => (req, res, next) => admittedRoles.includes(req.user.role) ? next() : res.render('academy/academy-login', { errorMsg: 'Acceso denegado. No tienes permisos para ver esta zona de la web. Por favor, contacta con el administrador de la web.' })
+const checkRole = admittedRoles => (req, res, next) => admittedRoles.includes(req.user.role) ? next() : res.render('academy/academy-login', { errorMsg: 'Acceso denegado. No tienes permisos para ver esta zona de la web. Por favor, contacta con un administrador de IronHack para que modifique tus permisos.' })
 
 
 // MOSTRAR FORMULARIO DE REGISTRO
@@ -45,7 +45,7 @@ router.post('/signup', (req, res, next) => {
             User
                 .create({ username, password: hashPass })
                 .then(() => res.redirect('/academy/login'))
-                .catch(() => res.render('academy/academy-signup', { errorMsg: 'Nombre de empresa ya registrada. Contacta con el responsable de tu empresa.' }))
+                .catch(() => res.render('academy/academy-signup', { errorMsg: 'Error. Contacta con un administrador de IronHack.' }))
 
         })
 
@@ -86,6 +86,55 @@ router.get('/private-academy', isLogged, checkRole(['IRONHACK-RECRUITER']), (req
         .catch(err => next(new Error(err)))
 
 })
+
+
+// Panel control
+
+router.get('/panel-control', isLogged, checkRole(['IRONHACK-RECRUITER']), (req, res, next) => {
+
+    User
+        .find()
+        .then(allUsers => res.render('academy/academy-panel-control', { allUsers }))
+        .catch(err => next(new Error(err)))
+
+})
+
+
+// Edit user roles
+router.get('/panel-control/edit', isLogged, checkRole(['IRONHACK-RECRUITER']), (req, res, next) => {
+
+
+    User
+        .findById(req.query.id)
+        .then(editUserRole => res.render('academy/academy-edit', { editUserRole }))
+        .catch(err => next(new Error(err)))
+
+})
+
+
+router.post('/panel-control/edit', isLogged, checkRole(['IRONHACK-RECRUITER']), (req, res, next) => {
+
+    const { role } = req.body
+
+    User
+        .findByIdAndUpdate(req.query.id, { role })
+        .then(() => res.redirect('/academy/panel-control'))
+        .catch(err => next(new Error(err)))
+
+})
+
+
+
+// Delete user
+
+router.get('/panel-control/delete', isLogged, checkRole(['IRONHACK-RECRUITER']), (req, res, next) => {
+
+    User
+        .findByIdAndRemove(req.query.id)
+        .then(() => res.redirect('/academy/panel-control'))
+        .catch(err => next(new Error(err)))
+})
+
 
 
 // ELIMINAR UNA OFERTA DE EMPLEO

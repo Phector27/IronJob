@@ -13,7 +13,7 @@ const bcryptSalt = 10
 
 
 const isLogged = (req, res, next) => req.isAuthenticated() ? next() : res.render('student/student-login', { errorMsg: 'Acceso denegado. Haz login para acceder a esta zona de la web.' })
-const checkRole = admittedRoles => (req, res, next) => admittedRoles.includes(req.user.role) ? next() : res.render('student/student-login', { errorMsg: 'Acceso denegado. No tienes permisos para ver esta zona de la web. Por favor, contacta con el administrador de la web.' })
+const checkRole = admittedRoles => (req, res, next) => admittedRoles.includes(req.user.role) ? next() : res.render('student/student-login', { errorMsg: 'Acceso denegado. No tienes permisos para ver esta zona de la web. Por favor, contacta con un administrador de IronHack para que modifique tus permisos.' })
 
 // MOSTRAR FORMULARIO DE REGISTRO
 

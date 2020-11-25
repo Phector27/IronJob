@@ -11,7 +11,7 @@ const bcrypt = require('bcryptjs')
 const bcryptSalt = 10
 
 const isLogged = (req, res, next) => req.isAuthenticated() ? next() : res.render('company/company-login', { errorMsg: 'Acceso denegado. Haz login para acceder a esta zona de la web.' })
-const checkRole = admittedRoles => (req, res, next) => admittedRoles.includes(req.user.role) ? next() : res.render('company/company-login', { errorMsg: 'Acceso denegado. No tienes permisos para ver esta zona de la web. Por favor, contacta con el administrador de la web.' })
+const checkRole = admittedRoles => (req, res, next) => admittedRoles.includes(req.user.role) ? next() : res.render('company/company-login', { errorMsg: 'Acceso denegado. No tienes permisos para ver esta zona de la web. Por favor, contacta con un administrador de IronHack para que modifique tus permisos.' })
 
 
 // ZONA PÚBLICA:
@@ -47,8 +47,8 @@ router.post('/signup', (req, res, next) => {
 
             User
                 .create({ username, password: hashPass, name })
-                .then(() => res.redirect('/company/login'))
-                .catch(() => res.render('company/company-signup', { errorMsg: 'Nombre de empresa ya registrada. Contacta con el responsable de tu empresa.' }))
+                .then(() => res.render('welcome'))
+                .catch(() => res.render('company/company-signup', { errorMsg: 'Error. Contacta con un administrador de IronHack.' }))
 
         })
 
