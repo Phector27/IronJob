@@ -6,7 +6,7 @@
 body {
   overflow-x: hidden; }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h4, h5, h6 {
   color: rgba(255, 255, 255, 0.781); }
 
 p {
@@ -125,7 +125,7 @@ hr {
   position: relative;
   max-width: 262px;
   background-color: #f2f8f9;
-  border-radius: 4px;
+  border-radius: 7px;
   padding: 32px 24px;
   margin: 12px;
   text-decoration: none;
@@ -138,6 +138,7 @@ hr {
     top: -16px;
     right: -16px;
     background: #4CAF50;
+    color: black;
     height: 32px;
     width: 32px;
     border-radius: 32px;
@@ -145,7 +146,7 @@ hr {
     transform-origin: 50% 50%;
     transition: transform 0.25s ease-out; }
   .card1:hover:before {
-    transform: scale(40); }
+    transform: scale(39); }
 
 .card1:hover p {
   transition: all 0.3s ease-out;
@@ -183,7 +184,7 @@ hr {
 
 #indexcard h2,
 p {
-  color: green; }
+  color: black; }
 
 #indexcard:hover {
   padding: 30px;
@@ -201,10 +202,14 @@ p {
   box-shadow: inset 0px 10px 20px -3px #bdb6bd;
   padding-bottom: 100px; }
 
+.maps p {
+  color: rgba(255, 255, 255, 0.781); }
+
 .section2 {
   background-color: white;
   margin-top: -20px;
-  box-shadow: inset 0px 50px 30px -3px #bdb6bd; }
+  box-shadow: inset 0px 50px 30px -3px #bdb6bd;
+  padding-bottom: 150px; }
 
 .section3 {
   margin-top: 100px; }

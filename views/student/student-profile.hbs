@@ -1,25 +1,23 @@
 <div class="profile">
     <div class="container-fluid">
         <h1 style="text-align: center;">Bienvenido al área privada de Estudiante</h1>
-        <h3 style="text-align: center;">Aquí se muestran todas las ofertas de empleo publicadas</h3>
+        <h3 style="text-align: center; color: rgba(255,255,255,0.871)">Aquí se muestran todas las ofertas de empleo publicadas</h3>
         <hr><br><br>
-
         <div class="row justify-content-between">
-        {{#each allOffers}}
+            {{#each allOffers}}
             <div class="col-4">
-                    <div class="card1" href="#" style="max-width: 40rem; height: inherit">
-                        <h3>{{study}} - {{name}} - {{location}}</h3>
-                        <p class="small">{{description}}</p>
-                        <p class="small"><strong>Contacto: </strong> - {{email}}</p>
-                        <a href="/student/private-student/apply-offer?id={{id}}"
-                            class="btn btn-block btn-outline-info btn-md">Me interesa</a>
-                    </div>
+                <div class="card1" href="#" style="max-width: 40rem;">
+                    <h3>{{study}} - {{name}}</h3>
+                    <h4>{{location}} - {{style}}</h4>
+                    <p class="small"><strong>Descripción: </strong>{{description}}</p>
+                    <a href="/student/private-student/apply-offer?id={{id}}"
+                        class="btn btn-block btn-outline-light btn-md">Me interesa</a>
                 </div>
-                {{/each}}
             </div>
+            {{/each}}
         </div>
     </div>
-
+</div>
 {{#if infoSendMail}}
 <section class="container index-company" style="margin-top: -50px;">
     <div class="row justify-content-center">
@@ -35,7 +33,8 @@
                         <p class="mx-5 mb-5" style="color: white; font-weigth: 700;">Tu mensaje ha sido enviado con
                             éxito!
                         </p><br>
-                        <a href="/student/private-student" class="btn btn-success">🥇 Aplicar en más ofertas 🥇</a>
+                        <a href="/student/private-student" class="btn btn-success">:medalla_de_oro: Aplicar en más
+                            ofertas :medalla_de_oro:</a>
                     </div>
                 </div>
             </div>

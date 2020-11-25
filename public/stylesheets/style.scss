@@ -9,7 +9,7 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h4, h5, h6 {
   color: rgba(255, 255, 255, 0.781);
 }
 
@@ -155,8 +155,7 @@ hr {
   position: relative;
   max-width: 262px;
   background-color: #f2f8f9;
-  ;
-  border-radius: 4px;
+  border-radius: 7px;
   padding: 32px 24px;
   margin: 12px;
   text-decoration: none;
@@ -170,6 +169,7 @@ hr {
     top: -16px;
     right: -16px;
     background: #4CAF50;
+    color: black;
     height: 32px;
     width: 32px;
     border-radius: 32px;
@@ -179,7 +179,7 @@ hr {
   }
 
   &:hover:before {
-    transform: scale(40);
+    transform: scale(39);
   }
 }
 
@@ -227,10 +227,10 @@ hr {
 
 #indexcard h2,
 p {
-  color: green;
+  color: black;
 }
 
-#indexcard:hover {
+#indexcard:hover  {
   padding: 30px;
   margin-top: 50px;
   position: relative;
@@ -238,6 +238,7 @@ p {
   -moz-box-shadow: 0px 91px 68px 3px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 91px 68px 3px rgba(0, 0, 0, 0.75);
 }
+
 
 .maps {
   background-image: url('../images/DEFINITIVI.png');
@@ -248,10 +249,16 @@ p {
   padding-bottom: 100px;
 }
 
+.maps p {
+color: rgba(255,255,255, 0.781)
+
+}
+
 .section2 {
   background-color: white;
   margin-top: -20px;
   box-shadow: inset 0px 50px 30px -3px #bdb6bd;
+  padding-bottom: 150px;
 }
 
 .section3 {
