@@ -1,5 +1,5 @@
 <div class="container-fluid companyedit">
-    <h1 style="text-align: center;">Bienvenido a tu área privada</h1>
+    <h1 style="text-align: center;">Área privada de {{user.name}}</h1>
     <hr><br><br>
     <div class="row justify-content-around">
         <div class="col-md-5 left">
@@ -12,7 +12,7 @@
                 </div>
                 <div class="form-group">
                     <label>Título de la oferta</label>
-                    <input type="text" class="form-control" name="title" value="{{editOffer.title}}">
+                    <input type="text" class="form-control" name="title" minlength="10" value="{{editOffer.title}}">
                 </div>
                 <div class="form-group">
                     <div class="form-group">
@@ -24,7 +24,7 @@
                 </div>
                 <div class="form-group">
                     <label>Ubicación</label>
-                    <input type="texto" class="form-control" name="location" value="{{editOffer.location}}">
+                    <input type="texto" class="form-control" name="location" minlength="5" value="{{editOffer.location}}">
                 </div>
                 <div class="form-group">
                     <div class="form-group">
@@ -35,7 +35,7 @@
                 </div>
                 <div class="form-group">
                     <label for="description">Descripción de la oferta</label>
-                    <textarea class="form-control" id="description" rows="10" name="description"
+                    <textarea class="form-control" id="description" rows="10" minlength="5" name="description"
                         value="{{editOffer.description}}">{{editOffer.description}}</textarea>
                 </div>
                 <div class="form-group">
@@ -45,7 +45,7 @@
                     <small id="emailHelp" class="form-text text-muted">Solo compartiremos tu email de contacto con el
                         equipo de IronHack.</small>
                 </div>
-                <button type="submit" class="btn btn-dark btn-block">Editar y volver</button>
+                <button type="submit" class="btn btn-outline-light btn-block">Editar y volver</button>
             </form>
         </div>
     </div>

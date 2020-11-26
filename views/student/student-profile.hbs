@@ -1,14 +1,14 @@
 <div class="profile">
     <div class="container-fluid">
-        <h1 style="text-align: center;">Bienvenido al área privada de Estudiante</h1>
+        <h1 style="text-align: center;">Área privada de {{user.name}}</h1>
         <h3 style="text-align: center; color: rgba(255,255,255,0.871)">Aquí se muestran todas las ofertas de empleo publicadas</h3>
         <hr><br><br>
         <div class="row justify-content-between">
             {{#each allOffers}}
             <div class="col-4">
                 <div class="card1" href="#" style="max-width: 40rem;">
-                    <h3><strong>{{study}}</strong> - {{name}}</h3>
-                    <h4><strong>Ubicación: </strong>{{location}} - {{style}}</h4>
+                    <h3><strong>{{study}}</strong> - {{name}}</h3><hr>
+                    <h4><strong>Ubicación: </strong>{{location}} - {{style}}</h4><br>
                     <p class="small"><strong>Descripción: </strong>{{description}}</p>
                     <a href="/student/private-student/apply-offer?id={{id}}"
                         class="btn btn-block btn-outline-light btn-md">Me interesa</a>

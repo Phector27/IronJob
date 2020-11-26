@@ -51,7 +51,7 @@ router.get('/private-company/edit', isLogged, checkRole(['BUSINESS-RECRUITER']),
 
     Offer
         .findById(req.query.id)
-        .then(editOffer => res.render('company/company-edit', { editOffer }))
+        .then(editOffer => res.render('company/company-edit', { editOffer, user: req.user }))
         .catch(err => next(new Error(err)))
 })
 

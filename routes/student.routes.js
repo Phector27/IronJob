@@ -15,7 +15,7 @@ router.get('/private-student', isLogged, checkRole(['Student']), (req, res, next
 
     Offer
         .find()
-        .then(allOffers => res.render('student/student-profile', { allOffers }))
+        .then(allOffers => res.render('student/student-profile', { allOffers, user: req.user }))
         .catch(err => next(new Error(err)))
 })
 
@@ -27,7 +27,7 @@ router.get('/private-student/apply-offer', isLogged, checkRole(['Student']), (re
         .catch(err => next(new Error(err)))
 })
 
-router.post('/private-student/apply-offer', (req, res, next) => {
+router.post('/private-student/apply-offer', isLogged, checkRole(['Student']), (req, res, next) => {
 
     const { email, subject, message } = req.body
 
@@ -39,7 +39,7 @@ router.post('/private-student/apply-offer', (req, res, next) => {
             text: message,
             html: message
         })
-        .then(infoSendMail => res.render('student/student-profile', { infoSendMail }))
+        .then(infoSendMail => res.render('student/student-profile', { infoSendMail, user: req.user }))
         .catch(err => next(new Error(err)))
 })
 

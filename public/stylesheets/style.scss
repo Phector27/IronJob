@@ -90,8 +90,8 @@ hr {
 }
 
 .companyedit {
-  margin-top: 150px;
-
+  margin-top: 75px;
+  margin-bottom: 150px;
 }
 
 .upexit {
@@ -123,7 +123,7 @@ hr {
 
 .partners img {
   filter: grayscale(.8);
-  width: 100%;
+  width: 110%;
   transition: all 1s;
   opacity: .7;
   margin-top: 50px;
@@ -149,7 +149,7 @@ hr {
   margin: 0;
   color: #fff;
   text-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
-  font-size: 9vh;
+  font-size: 6vw;
   text-transform: uppercase;
 }
 .motivation span:before {
@@ -200,23 +200,33 @@ hr {
     border-radius: 32px;
     transform: scale(1);
     transform-origin: 50% 50%;
-    transition: transform 0.25s ease-out;
+    transition: transform 1s ease-out;
   }
 
   &:hover:before {
-    transform: scale(39);
+    transform: scale(42);
+  }
+
+  h4 {
+    color: #f2f8f9;
   }
 }
 
 .card1:hover {
+  font-size: 1.3em;
+  transition: .5s;
   p {
     transition: all 0.3s ease-out;
     color: rgba(255, 255, 255, 0.8);
   }
 
   h3 {
-    transition: all 0.3s ease-out;
+    transition: all .3s ease-out;
     color: #ffffff;
+  }
+
+  h4 {
+    color: rgba(37, 37, 37, 0.781);
   }
 }
 
@@ -263,6 +273,10 @@ hr {
   box-shadow: 0px 91px 68px 3px rgba(0, 0, 0, 0.75);
 }
 
+.card {
+  border-radius: 10px;
+  font-size: .9em;
+}
 
 .maps {
   background-image: url('../images/DEFINITIVI.png');
@@ -299,7 +313,7 @@ body {
   font-family: sans-serif;
   background-image: url('../images/DEFINITIVI.png');
   background-size: auto;
-  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .login-box {
@@ -372,10 +386,10 @@ body {
 
 .SNTwitter {
   align-items: center;
-  width: 5%;
+  width: 4.3%;
 }
 
 .SNInsta {
-  width: 6.5%;
+  width: 5.5%;
   margin-right: 20px;
 }
