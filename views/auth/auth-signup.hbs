@@ -1,19 +1,19 @@
 <div>
     <div class="login-box">
-        <form method="POST" action="/company/signup">
+        <form method="POST" action="/auth/signup">
             <h1>Signup</h1>
             <div class="textbox">
                 <i class="fas fa-user"></i>
-                <input type="text" placeholder="Username" name="username">
+                <input type="text" placeholder="Username" name="username" minlength="4">
             </div>
             <div class="textbox">
                 <i class="fas fa-lock"></i>
-                <input type="password" name="password" placeholder="Password">
+                <input type="password" name="password" placeholder="Password" minlength="4">
             </div>
             <div class="form-group">
                 <label>Razón social:</label>
-                <input type="text" class="form-control" name="name"><br>
-                <p><i>Estudiante indica solo nombre y apellidos.</i></p>
+                <input type="text" class="form-control" name="name" minlength="5">
+                <p style="color: lightgray;"><i><small>Estudiante indica solo nombre y apellidos.</small></i></p>
             </div>
             <input type="submit" class="btn2" value="Sign up">
             {{#if errorMsg}}

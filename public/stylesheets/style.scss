@@ -81,12 +81,21 @@ hr {
 }
 
 .index-company {
+  margin-top: -150px;
+}
+
+.index-company2 {
   margin-top: 300px;
+  color: #f2f8f9;
 }
 
 .companyedit {
   margin-top: 150px;
 
+}
+
+.upexit {
+  margin-top: -200px;
 }
 
 .backnav {
@@ -145,7 +154,7 @@ hr {
 }
 .motivation span:before {
   content: ' TALENTO';
-  animation: animate infinite 10.5s;
+  animation: animate infinite 9.8s;
   color: #4CAF50;
 }
 @keyframes animate {
@@ -224,7 +233,7 @@ hr {
   margin-top: 100px;
   margin-bottom: 300px;
   transition-duration: 2s;
-  margin-left: -350px;
+  margin-left: -300px;
 }
 
 .statement1 img:hover {
@@ -272,6 +281,7 @@ color: rgba(255,255,255, 0.781)
 .section2 {
   background-color: white;
   margin-top: -20px;
+  padding-top: 100px;
   box-shadow: inset 0px 50px 30px -3px #bdb6bd;
   padding-bottom: 150px;
 }
@@ -348,9 +358,27 @@ body {
 
 .profile {
   margin-top: 150px;
-  padding-bottom: 50px;
+  margin-bottom: 300px;
 }
 
 .deletebtn {
   margin-left: -20px;
+<<<<<<< HEAD
+=======
+}
+
+.RRSS {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.SNTwitter {
+  align-items: center;
+  width: 6%;
+}
+
+.SNInsta {
+  width: 8%;
+  margin-right: 20px;
+>>>>>>> 72fd1d28119491e6b4838a3d1f35bb438661425f
 }
