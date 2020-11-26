@@ -186,6 +186,7 @@ hr {
   text-decoration: none;
   z-index: 0;
   overflow: hidden;
+  font-size: 1.15em;
 
   &:before {
     content: "";
@@ -213,7 +214,6 @@ hr {
 }
 
 .card1:hover {
-  font-size: 1.3em;
   transition: .5s;
   p {
     transition: all 0.3s ease-out;

@@ -149,7 +149,8 @@ hr {
   margin: 12px;
   text-decoration: none;
   z-index: 0;
-  overflow: hidden; }
+  overflow: hidden;
+  font-size: 1.15em; }
   .card1:before {
     content: "";
     position: absolute;
@@ -170,7 +171,6 @@ hr {
     color: #f2f8f9; }
 
 .card1:hover {
-  font-size: 1.3em;
   transition: .5s; }
   .card1:hover p {
     transition: all 0.3s ease-out;
