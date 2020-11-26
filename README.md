@@ -52,7 +52,7 @@ A lightweight, modern and functional index page. This design shows the capabilit
 
 :scream_cat: This is with only 5 weeks of classes :scream_cat:
 
-[![ShowIndex](https://img.youtube.com/vi/1ADY6rMmR50/0.jpg)](https://www.youtube.com/watch?v=1ADY6rMmR50)
+[![YoutubeShow](http://img.youtube.com/vi/1ADY6rMmR50/0.jpg)](http://www.youtube.com/watch?v=1ADY6rMmR50 "ShowIndex")
 
 **5. Take a look for yourself:**
 
