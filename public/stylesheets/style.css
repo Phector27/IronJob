@@ -104,7 +104,7 @@ hr {
   margin: 0;
   color: #fff;
   text-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
-  font-size: 6vw;
+  font-size: 9vh;
   text-transform: uppercase; }
 
 .motivation span:before {
@@ -182,8 +182,7 @@ hr {
   border: 2px solid #4CAF50;
   border-radius: 10px; }
 
-#indexcard h2,
-p {
+#indexcard h2, p {
   color: black; }
 
 #indexcard:hover {
@@ -276,10 +275,5 @@ body {
 
 .deletebtn {
   margin-left: -20px; }
-
-.SN img {
-  display: flex;
-  align-items: center;
-  width: 5%; }
 
 /*# sourceMappingURL=style.css.map */
