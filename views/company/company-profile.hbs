@@ -8,7 +8,7 @@
         </div>
         {{/if}}
         <div class="row justify-content-around">
-            <div class="col-md-4">
+            <div class="col-lg-4">
                 <h1>Crear nueva oferta de empleo</h1>
                 <hr>
                 <form method="POST" action="/company/private-company">
@@ -58,7 +58,7 @@
                     <button type="submit" class="btn btn-outline-success btn-block">Crear nueva oferta</button>
                 </form>
             </div>
-            <div class="col-md-5">
+            <div class="col-lg-5">
                 {{#each allOffers}}
                 <div class="card border-dark mb-3" style="max-width: 40rem;">
                     <div class="card-header">{{title}}</div>
@@ -69,12 +69,12 @@
                         <p class="card-text text-dark"><strong>Contacto: </strong>{{email}}</p>
                         <div class="card-footer bg-transparent border-success">
                             <div class="row justify-content-between">
-                                <div class="col-md-3">
+                                <div class="col-3 col-sm-4 col-md-4">
                                     <a href="/company/private-company/edit?id={{id}}"
                                         class="btn btn-outline-dark btn-sm">Editar oferta
                                     </a>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-3 col-sm-4 col-md-4">
                                     <a href="/company/private-company/delete?id={{id}}"
                                         class="btn btn-outline-danger deletebtn btn-sm">Eliminar oferta
                                     </a>
