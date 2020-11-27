@@ -27,6 +27,7 @@ router.get('/private-student/apply-offer', isLogged, checkRole(['Student']), (re
         .catch(err => next(new Error(err)))
 })
 
+// Apply offers
 router.post('/private-student/apply-offer', isLogged, checkRole(['Student']), (req, res, next) => {
 
     const { email, subject, message } = req.body

@@ -1,41 +1,27 @@
 <div class="container-fluid profile">
-
     <h1 style="text-align: center;">✅ Editar permisos ✅</h1>
     <hr><br><br>
-
     <div class="row justify-content-around">
-
-
         <div class="col-md-5 left">
-
             <h1>Nombre: {{editUserRole.name}}</h1>
             <hr>
-
             <form method="POST" action="/academy/panel-control/edit?id={{editUserRole.id}}">
-
-
                 <div class="form-group">
                     <label>Nombre de usuario</label>
                     <input type="text" class="form-control" name="name" value="{{editUserRole.username}}" readonly />
                 </div>
-
                 <div class="form-group">
-
                     <label for="role-list">Permisos:</label>
                     <select name="role" class="form-control" id="role-list">
                         <option>Seleccionar</option>
-
                         <option value="IRONHACK-RECRUITER">IRONHACK-RECRUITER</option>
                         <option value="BUSINESS-RECRUITER">BUSINESS-RECRUITER</option>
                         <option value="Student">Student</option>
-
+                        <option value="Inactive">Inactive</option>
                     </select>
                 </div>
-
                 <button type="submit" class="btn btn-outline-success btn-block">Editar y volver</button>
             </form>
         </div>
-
     </div>
-
 </div>

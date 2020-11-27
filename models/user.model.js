@@ -11,7 +11,7 @@ const userSchema = new Schema({
     password: String,
     role: {
       type: String,
-      enum: ['IRONHACK-RECRUITER', 'BUSINESS-RECRUITER', 'Student', 'Guest'],
+      enum: ['IRONHACK-RECRUITER', 'BUSINESS-RECRUITER', 'Student', 'Guest', 'Inactive'],
       default: 'Guest',
     }
   }, { timestamps: true })
