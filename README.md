@@ -1,7 +1,7 @@
 
 # :rocket: IronJob.:rocket:
 
-New platform for contact between young talents who have studied at IronHack and companies interested in attracting new talent.
+New responsive web platform for contact between young talents who have studied at IronHack and companies interested in attracting new talent.
 
 Created by: **José Dorado && Héctor Carramiñana**.
 
