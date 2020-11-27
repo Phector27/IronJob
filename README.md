@@ -69,7 +69,7 @@ A lightweight, modern and functional index page. This design shows the capabilit
 
 ![Student](https://i.ibb.co/qrbvrQ5/apply.png)
 
-**8. IronHack? This is a private area where IronHack administrators can change user permissions, delete them and delete job offers as well. **
+**8. IronHack? This is a private area where IronHack administrators can change user permissions, delete them and delete job offers as well.**
 
 ![offersiron](https://i.ibb.co/XbDPMLm/offersiron.png)
 
