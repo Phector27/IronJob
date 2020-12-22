@@ -3,7 +3,7 @@
 
 New responsive web platform for contact between young talents who have studied at IronHack and companies interested in attracting new talent.
 
-Created by: **José Dorado && Héctor Carramiñana**.
+Created by: **Héctor Carramiñana && José Dorado**.
 
 A platform with three different accesses and registers:
 
@@ -80,8 +80,8 @@ And...**_That's all Folks._**
 
 ## Authors ✒️
 
-* **José Dorado** - *Complete web development* - (https://github.com/romadorado)
 * **Héctor Carramiñana** - *Complete web development* - (https://github.com/Phector27)
+* **José Dorado** - *Complete web development* - (https://github.com/romadorado)
 
 ### Built with :heart:
 
